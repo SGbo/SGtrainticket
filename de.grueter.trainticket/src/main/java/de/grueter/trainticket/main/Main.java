@@ -1,4 +1,4 @@
-package de.grueter.trainticket;
+package de.grueter.trainticket.main;
 
 public class Main {
 	@SuppressWarnings("unused")
