@@ -18,29 +18,34 @@ public final class ShopModel {
 	
 	// hidden constructor
 	private ShopModel() {
-		initProducts();
-		initBasket();
+		initTableModels();
 	}
 	
-	private void initProducts() {
-		// init product-headings
+	private void initTableModels() {
+		/* PRODUCTS */
         String productHeadings[] = new String[] {
-            "Id", "Name", "Preis", "G�ltigkeit"
-        };
-         
-        // init products
+            "Produkt", "Preis"
+        };		
+       	
         Object productArray[][] = new Object[][] {
-            {1, "TICKET 2000", 40.0, "Monat" },
-            {2, "B�RENTICKET", 70.0, "Monat" },
-            {3, "JUNGTICKET", 60.0, "Monat" },
-            {4, "SCHOKOTICKET", 20.0, "Monat" }
+            { "Einzelticket Kurzstrecke",	"1.60 €" },
+            { "EinzelTicket A",				"2.70 €" },
+            { "EinzelTicket B", 			"5.80 €" },
+            { "EinzelTicket C", 			"12.10 €" },
+            { "EinzelTicket D", 			"15.00 €" },
+            { "TagesTicket A", 				"6.80 €" },
+            { "TagesTicket B", 				"13.90 €" },
+            { "TagesTicket C", 				"23.60 €" },
+            { "TagesTicket D", 				"28.40 €" }
         };
         
         productModel = new DefaultTableModel(productArray, productHeadings);
-	}
-	
-	private void initBasket() {
-		basketModel = new DefaultTableModel();
+        
+        /* BASKET */
+        basketModel = new DefaultTableModel();
+        basketModel.addColumn("Anzahl");
+		basketModel.addColumn("Produkt");
+		basketModel.addColumn("Preis / Stück");
 	}
 	
 	public DefaultTableModel getProductModel() {
